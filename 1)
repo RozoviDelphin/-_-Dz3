@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int Hanoiskie_bashni(int N,int i,int k)
+{
+    if (N==1)
+    {
+        printf ("Переложи первый диск с %d на %d\n",i,k);
+    }
+    else
+    {
+        int tmp=6-i-k;
+        Hanoiskie_bashni(N-1,i,tmp);
+        printf ("Переложи %d диск с %d на %d\n",N,i,k);
+        Hanoiskie_bashni(N-1,tmp,k);
+    }
+}
+
+int main() 
+{
+   int N,i,k;
+   scanf("%d",&N);
+   Hanoiskie_bashni(N,1,2);
+   
+}
